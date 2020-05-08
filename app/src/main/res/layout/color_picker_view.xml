@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minWidth="240dp"
+    android:minHeight="360dp">
+
+    <View
+        android:id="@+id/colorpicker_current_color_demo"
+        android:layout_width="0dp"
+        android:layout_height="96dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@android:color/holo_blue_light" />
+
+    <TextView
+        android:id="@+id/hue_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_normal"
+        android:paddingTop="@dimen/margin_normal"
+        android:paddingRight="@dimen/spacing_micro"
+        android:paddingBottom="@dimen/margin_normal"
+        android:text="H"
+        app:layout_constraintBottom_toTopOf="@id/saturation_slider"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/colorpicker_current_color_demo" />
+
+    <io.github.mattpvaughn.pixelly.view.colorpicker.HueSlider
+        android:id="@+id/hue_slider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/hue_label"
+        app:layout_constraintLeft_toRightOf="@id/hue_label"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/hue_label" />
+
+    <TextView
+        android:id="@+id/saturation_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_normal"
+        android:paddingTop="@dimen/margin_normal"
+        android:paddingRight="@dimen/spacing_micro"
+        android:paddingBottom="@dimen/margin_normal"
+        android:text="S"
+        app:layout_constraintBottom_toTopOf="@id/value_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hue_label" />
+
+    <io.github.mattpvaughn.pixelly.view.colorpicker.SaturationSlider
+        android:id="@+id/saturation_slider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/saturation_label"
+        app:layout_constraintLeft_toLeftOf="@id/hue_slider"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/saturation_label" />
+
+    <TextView
+        android:id="@+id/value_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_normal"
+        android:paddingTop="@dimen/margin_normal"
+        android:paddingRight="@dimen/spacing_micro"
+        android:paddingBottom="@dimen/margin_normal"
+        android:text="V"
+        app:layout_constraintBottom_toTopOf="@id/colorpicker_input_color_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/saturation_label" />
+
+    <io.github.mattpvaughn.pixelly.view.colorpicker.ValueSlider
+        android:id="@+id/value_slider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/value_label"
+        app:layout_constraintLeft_toLeftOf="@id/hue_slider"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/value_label" />
+
+    <TextView
+        android:id="@+id/alpha_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_normal"
+        android:visibility="gone"
+        android:paddingTop="@dimen/margin_normal"
+        android:paddingRight="@dimen/spacing_micro"
+        android:paddingBottom="@dimen/margin_normal"
+        android:text="A"
+        app:layout_constraintBottom_toTopOf="@id/colorpicker_input_color_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/value_slider" />
+
+    <io.github.mattpvaughn.pixelly.view.colorpicker.AlphaSlider
+        android:id="@+id/alpha_slider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/alpha_label"
+        app:layout_constraintLeft_toLeftOf="@id/hue_slider"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/alpha_label" />
+
+    <TextView
+        android:id="@+id/colorpicker_input_color_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/margin_normal"
+        android:paddingTop="@dimen/margin_normal"
+        android:paddingRight="@dimen/spacing_micro"
+        android:paddingBottom="@dimen/margin_normal"
+        android:text="Hex:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/value_label"
+ />
+
+    <EditText
+        android:id="@+id/colorpicker_input_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="#RRGGBB"
+        android:inputType="textCapCharacters|textNoSuggestions|textVisiblePassword"
+        android:lines="1"
+        android:maxLength="7"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="@id/colorpicker_input_color_label"
+        app:layout_constraintLeft_toRightOf="@id/colorpicker_input_color_label"
+        app:layout_constraintTop_toTopOf="@id/colorpicker_input_color_label" />
+
+    <Button
+        android:id="@+id/colorpicker_finish_button"
+        style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_large"
+        android:layout_marginRight="@dimen/margin_normal"
+        android:text="@android:string/ok"
+        app:layout_constraintBottom_toBottomOf="@id/colorpicker_input_color_label"
+        app:layout_constraintLeft_toRightOf="@id/colorpicker_input_color"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/colorpicker_input_color_label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Pixelly</string>
+    <string name="tab_library">Pixelly</string>
+    <string name="no_books_found">No items found</string>
+    <string name="refresh_list">Refresh list</string>
+    <string name="home">Home</string>
+    <string name="not_connected">No network connection</string>
+    <string name="canvas">Canvas</string>
+    <string name="choose_color">Choose color</string>
+    <string name="pen_tool">Pen tool</string>
+</resources>

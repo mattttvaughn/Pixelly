@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rootBackground"
+    tools:context=".features.library.EditorFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+            app:title="@string/app_name" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <io.github.mattpvaughn.pixelly.view.PixelCanvas
+        android:id="@+id/pixelCanvas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_large"
+        android:background="@color/canvasBackground"
+        android:contentDescription="@string/canvas"
+        android:elevation="8dp"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/toolbox"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_layout" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/toolbox"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/bottom_bar_height"
+        android:elevation="4dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/palette"
+                android:layout_width="@dimen/top_level_icon"
+                android:layout_height="@dimen/top_level_icon"
+                android:layout_weight="1"
+                android:contentDescription="@string/choose_color"
+                android:src="@drawable/ic_palette_white_24dp"
+                android:tint="@color/colorAccent" />
+
+            <ImageView
+                android:id="@+id/pen_tool"
+                android:layout_width="@dimen/top_level_icon"
+                android:layout_height="@dimen/top_level_icon"
+                android:layout_weight="1"
+                android:contentDescription="@string/pen_tool"
+                android:src="@drawable/ic_brush_white_24dp"
+                android:tint="@color/colorAccent" />
+
+            <ImageView
+                android:id="@+id/fill_tool"
+                android:layout_width="@dimen/top_level_icon"
+                android:layout_height="@dimen/top_level_icon"
+                android:layout_weight="1"
+                android:alpha="0.5"
+                android:contentDescription="@string/pen_tool"
+                android:src="@drawable/ic_format_color_fill_white_24dp"
+                android:tint="@color/colorAccent" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
